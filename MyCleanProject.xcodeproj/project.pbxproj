@@ -20,6 +20,8 @@
 		A20176052D3E28F9006934FC /* UserListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20176042D3E28F9006934FC /* UserListItem.swift */; };
 		A20176072D3E2A33006934FC /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20176062D3E2A33006934FC /* NetworkError.swift */; };
 		A20176092D3E2BA7006934FC /* CoreDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20176082D3E2BA7006934FC /* CoreDataError.swift */; };
+		A201760B2D3E2F81006934FC /* UserListUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A201760A2D3E2F81006934FC /* UserListUsecase.swift */; };
+		A201760E2D3E3205006934FC /* UserRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A201760D2D3E3205006934FC /* UserRepositoryProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		A20176042D3E28F9006934FC /* UserListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListItem.swift; sourceTree = "<group>"; };
 		A20176062D3E2A33006934FC /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		A20176082D3E2BA7006934FC /* CoreDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataError.swift; sourceTree = "<group>"; };
+		A201760A2D3E2F81006934FC /* UserListUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListUsecase.swift; sourceTree = "<group>"; };
+		A201760D2D3E3205006934FC /* UserRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,7 @@
 		A20176012D3E28B3006934FC /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				A201760C2D3E31DA006934FC /* RepositoryProtocol */,
 				A20176032D3E28D1006934FC /* Usecase */,
 				A20176022D3E28C3006934FC /* Entity */,
 			);
@@ -159,8 +164,17 @@
 		A20176032D3E28D1006934FC /* Usecase */ = {
 			isa = PBXGroup;
 			children = (
+				A201760A2D3E2F81006934FC /* UserListUsecase.swift */,
 			);
 			path = Usecase;
+			sourceTree = "<group>";
+		};
+		A201760C2D3E31DA006934FC /* RepositoryProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				A201760D2D3E3205006934FC /* UserRepositoryProtocol.swift */,
+			);
+			path = RepositoryProtocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,10 +308,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A201760E2D3E3205006934FC /* UserRepositoryProtocol.swift in Sources */,
 				A20175D32D3E2896006934FC /* ViewController.swift in Sources */,
 				A20175CF2D3E2896006934FC /* AppDelegate.swift in Sources */,
 				A20175D12D3E2896006934FC /* SceneDelegate.swift in Sources */,
 				A20176072D3E2A33006934FC /* NetworkError.swift in Sources */,
+				A201760B2D3E2F81006934FC /* UserListUsecase.swift in Sources */,
 				A20175D92D3E2896006934FC /* MyCleanProject.xcdatamodeld in Sources */,
 				A20176052D3E28F9006934FC /* UserListItem.swift in Sources */,
 				A20176092D3E2BA7006934FC /* CoreDataError.swift in Sources */,
