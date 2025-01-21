@@ -18,7 +18,7 @@ public struct UserListResult: Decodable {
         case items
     }
     
-    init(from decoder: any Decoder) throws {
+    public init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.totalCount = try container.decode(Int.self, forKey: .totalCount)
         self.incompleteResults = try container.decode(Bool.self, forKey: .incompleteResults)
@@ -37,11 +37,17 @@ public struct UserListItem: Decodable {
         case imageURL = "avatar_url"
     }
     
-    init(from decoder: any Decoder) throws {
+    public init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decode(Int.self, forKey: .id)
         self.login = try container.decode(String.self, forKey: .login)
         self.imageURL = try container.decode(String.self, forKey: .imageURL)
+    }
+    
+    public init(id: Int, login: String, imageURL: String) {
+        self.id = id
+        self.login = login
+        self.imageURL = imageURL
     }
     
 }
