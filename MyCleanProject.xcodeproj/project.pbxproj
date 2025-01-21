@@ -27,6 +27,7 @@
 		A21DFEEE2D3F59980062AD7F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21DFEED2D3F59980062AD7F /* NetworkManager.swift */; };
 		A21DFEF02D3F59B80062AD7F /* UserNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21DFEEF2D3F59B80062AD7F /* UserNetwork.swift */; };
 		A21DFEF22D3F5FCA0062AD7F /* UserCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21DFEF12D3F5FCA0062AD7F /* UserCoreData.swift */; };
+		A21DFEF42D3F7DA50062AD7F /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21DFEF32D3F7DA50062AD7F /* UserRepository.swift */; };
 		B9B21EEAB387D46AA90368E4 /* Pods_MyCleanProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4452EF8849778B0DB7FB79C7 /* Pods_MyCleanProjectTests.framework */; };
 		D7CA53D4376C1876321E4BD1 /* Pods_MyCleanProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B2EF283975B07780524287 /* Pods_MyCleanProject.framework */; };
 /* End PBXBuildFile section */
@@ -78,6 +79,7 @@
 		A21DFEED2D3F59980062AD7F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A21DFEEF2D3F59B80062AD7F /* UserNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNetwork.swift; sourceTree = "<group>"; };
 		A21DFEF12D3F5FCA0062AD7F /* UserCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCoreData.swift; sourceTree = "<group>"; };
+		A21DFEF32D3F7DA50062AD7F /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		A9B2EF283975B07780524287 /* Pods_MyCleanProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyCleanProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA6429300DF4052FD99D2BEE /* Pods-MyCleanProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyCleanProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-MyCleanProjectTests/Pods-MyCleanProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E1169D24851504409994FAAA /* Pods_MyCleanProject_MyCleanProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyCleanProject_MyCleanProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -247,6 +249,7 @@
 		A21DFEE42D3E338B0062AD7F /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				A21DFEF32D3F7DA50062AD7F /* UserRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				A201760B2D3E2F81006934FC /* UserListUsecase.swift in Sources */,
 				A20175D92D3E2896006934FC /* MyCleanProject.xcdatamodeld in Sources */,
 				A21DFEF02D3F59B80062AD7F /* UserNetwork.swift in Sources */,
+				A21DFEF42D3F7DA50062AD7F /* UserRepository.swift in Sources */,
 				A20176052D3E28F9006934FC /* UserListItem.swift in Sources */,
 				A21DFEF22D3F5FCA0062AD7F /* UserCoreData.swift in Sources */,
 				A20176092D3E2BA7006934FC /* CoreDataError.swift in Sources */,
