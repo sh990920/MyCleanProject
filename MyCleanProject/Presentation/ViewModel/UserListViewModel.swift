@@ -104,7 +104,7 @@ public final class UserListViewModel: UserListViewModelProtocol {
                 keys.forEach { key in
                     cellData.append(.header(key))
                     if let users = dict[key] {
-                        cellData += users.map { UserListCellData.user(user: $0, isFavorite: true) } 
+                        cellData += users.map { UserListCellData.user(user: $0, isFavorite: true) }
                     }
                 }
             }
@@ -117,7 +117,7 @@ public final class UserListViewModel: UserListViewModelProtocol {
     private func fetchUser(query: String, page: Int) {
         guard let urlAllowdQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
         Task {
-            let result = await usecase.fetchUser(query: query, page: page)
+            let result = await usecase.fetchUser(query: urlAllowdQuery, page: page)
             switch result {
             case let .success(users):
                 if page == 0 {
@@ -182,9 +182,9 @@ public final class UserListViewModel: UserListViewModelProtocol {
     }
 }
 
-public enum TabButtonType {
-    case api
-    case favorite
+public enum TabButtonType: String {
+    case api = "API"
+    case favorite = "Favorite"
 }
 
 public enum UserListCellData {
