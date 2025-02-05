@@ -32,6 +32,7 @@
 		A21DFEF42D3F7DA50062AD7F /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21DFEF32D3F7DA50062AD7F /* UserRepository.swift */; };
 		A21DFEF82D3F855F0062AD7F /* UserUsecaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21DFEF72D3F855F0062AD7F /* UserUsecaseTests.swift */; };
 		A21DFEFB2D3F868F0062AD7F /* MockUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21DFEFA2D3F868F0062AD7F /* MockUserRepository.swift */; };
+		A2B66C7B2D53242E0081DBC8 /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B66C7A2D53242E0081DBC8 /* UserListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		A21DFEF32D3F7DA50062AD7F /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		A21DFEF72D3F855F0062AD7F /* UserUsecaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUsecaseTests.swift; sourceTree = "<group>"; };
 		A21DFEFA2D3F868F0062AD7F /* MockUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserRepository.swift; sourceTree = "<group>"; };
+		A2B66C7A2D53242E0081DBC8 /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
 		BBDAA60F0ECB1B1CCD160C71 /* Pods-MyCleanProject-MyCleanProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyCleanProject-MyCleanProjectUITests.release.xcconfig"; path = "Target Support Files/Pods-MyCleanProject-MyCleanProjectUITests/Pods-MyCleanProject-MyCleanProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C619B93C1B673164ECC135E7 /* Pods-MyCleanProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyCleanProject.debug.xcconfig"; path = "Target Support Files/Pods-MyCleanProject/Pods-MyCleanProject.debug.xcconfig"; sourceTree = "<group>"; };
 		CE21412F510B215E70064A2C /* Pods-MyCleanProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyCleanProject.release.xcconfig"; path = "Target Support Files/Pods-MyCleanProject/Pods-MyCleanProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 		A20175CD2D3E2896006934FC /* MyCleanProject */ = {
 			isa = PBXGroup;
 			children = (
+				A2B66C782D5324030081DBC8 /* Presentation */,
 				A21DFEE12D3E33770062AD7F /* Data */,
 				A20176012D3E28B3006934FC /* Domain */,
 				A20175CE2D3E2896006934FC /* AppDelegate.swift */,
@@ -276,6 +279,22 @@
 				A21DFEFA2D3F868F0062AD7F /* MockUserRepository.swift */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		A2B66C782D5324030081DBC8 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				A2B66C792D5324120081DBC8 /* ViewModel */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		A2B66C792D5324120081DBC8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A2B66C7A2D53242E0081DBC8 /* UserListViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -521,6 +540,7 @@
 				A21DFEEC2D3F597B0062AD7F /* UserSession.swift in Sources */,
 				A20175D32D3E2896006934FC /* ViewController.swift in Sources */,
 				A20175CF2D3E2896006934FC /* AppDelegate.swift in Sources */,
+				A2B66C7B2D53242E0081DBC8 /* UserListViewModel.swift in Sources */,
 				A21DFEEE2D3F59980062AD7F /* NetworkManager.swift in Sources */,
 				A20175D12D3E2896006934FC /* SceneDelegate.swift in Sources */,
 				A20176072D3E2A33006934FC /* NetworkError.swift in Sources */,
