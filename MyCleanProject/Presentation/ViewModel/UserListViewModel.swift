@@ -104,7 +104,7 @@ public final class UserListViewModel: UserListViewModelProtocol {
                 keys.forEach { key in
                     cellData.append(.header(key))
                     if let users = dict[key] {
-                        cellData += users.map { UserListCellData.user(user: $0, isFavorite: true) }
+                        cellData += users.map { UserListCellData.user(user: $0, isFavorite: true) } 
                     }
                 }
             }
