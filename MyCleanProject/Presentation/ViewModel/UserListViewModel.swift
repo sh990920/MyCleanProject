@@ -41,17 +41,34 @@ public final class UserListViewModel: UserListViewModelProtocol {
         let error: Observable<String>
     }
     
+    // 상단 텍스트 필드
+    // 하단 API탭 / 즐겨찾기 탭
+    
     public func transform(input: Input) -> Output { // VC이벤트 -> VM데이터
-        input.query.bind { query in
-            //TODO: 상황에 맞춰서 user Fetch or get favorite Users
+        input.query.bind { [weak self] query in //
+            //TODO: user Fetch and get favorite Users
+            guard let isValidate = self?.validateQeury(qurey: query), isValidate else {
+                self?.getFavoriteUsers(query: "")
+                return
+            }
+            self?.fetchUser(query: query, page: 0)
+            self?.getFavoriteUsers(query: query)
         }.disposed(by: disposeBag)
         
-        input.saveFavorite.bind{ user in
+        input.saveFavorite
+            .withLatestFrom(input.query, resultSelector: { users, query in
+            return (users, query)
+            })
+            .bind{ [weak self] user, query in
             //TODO: 즐겨찾기 추가
+            self?.saveFavoriteUser(user: user, query: query)
         }.disposed(by: disposeBag)
         
-        input.deleteFavorite.bind { userID in
+        input.deleteFavorite
+            .withLatestFrom(input.query, resultSelector: { ($0, $1) })
+            .bind { [weak self] userID, query in
             //TODO: 즐겨찾기 삭제
+                self?.deleteFavoriteUser(userID: userID, query: query)
         }.disposed(by: disposeBag)
         
         input.fetchMore.bind {
@@ -67,6 +84,73 @@ public final class UserListViewModel: UserListViewModelProtocol {
         }
         
         return Output(cellData: cellData, error: error.asObservable())
+    }
+    
+    private func fetchUser(query: String, page: Int) {
+        guard let urlAllowdQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
+        Task {
+            let result = await usecase.fetchUser(query: query, page: page)
+            switch result {
+            case let .success(users):
+                if page == 0 {
+                    // 첫번째 페이지
+                    fetchUserList.accept(users.items)
+                } else {
+                    // 두번째 그 이상 페이지
+                    fetchUserList.accept(fetchUserList.value + users.items)
+                }
+            case let .failure(error):
+                self.error.accept(error.description)
+            }
+        }
+    }
+    
+    private func getFavoriteUsers(query: String) {
+        let result = usecase.getFavoriteUsers()
+        switch result {
+        case .success(let users):
+            if query.isEmpty {
+                // 전체 리스트
+                favoriteUserList.accept(users)
+            } else {
+                // 검색어가 있을 때 필터링
+                let filteredUsers = users.filter { user in
+                    user.login.contains(query)
+                }
+                favoriteUserList.accept(filteredUsers)
+            }
+            allFavoriteUserList.accept(users)
+        case .failure(let error):
+            self.error.accept(error.description)
+        }
+    }
+    
+    private func saveFavoriteUser(user: UserListItem, query: String) { //입력값이 있을수도 있고 없을수도 있다.
+        let result = usecase.saveFavoriteUser(user: user)
+        switch result {
+        case .success:
+            getFavoriteUsers(query: query)
+        case .failure(let error):
+            self.error.accept(error.description)
+        }
+    }
+    
+    private func deleteFavoriteUser(userID: Int, query: String) {
+        let result = usecase.deleteFavoriteUser(userID: userID)
+        switch result {
+        case .success:
+            getFavoriteUsers(query: query)
+        case .failure(let error):
+            self.error.accept(error.description)
+        }
+    }
+    
+    private func validateQeury(qurey: String) -> Bool {
+        if qurey.isEmpty {
+            return false
+        } else {
+            return true
+        }
     }
 }
 
